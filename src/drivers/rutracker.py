@@ -667,7 +667,7 @@ class RuTrackerHTTP:
                 params['cap_sid'] = self.captcha_sid
                 params[self.captcha_code] = self.captcha_code_value
 
-            response = self.http.fetch('http://rutracker.nl/forum/login.php', cookies='rutracker.moz', headers=self.headers, method='POST', params=params)
+            response = self.http.fetch('https://rutracker.nl/forum/login.php', cookies='rutracker.moz', headers=self.headers, method='POST', params=params)
             self.captcha_sid, self.captcha_code, self.captcha_code_value = None, None, None
             if response.error:
                 return None
